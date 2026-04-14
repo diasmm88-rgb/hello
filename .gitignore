@@ -1,0 +1,26 @@
+# Go build files
+bin/
+build/
+dist/
+*.exe
+*.out
+*.test
+# Go modules
+vendor/
+# Logs
+*.log
+# Environment files
+.env
+# OS
+.DS_Store
+Thumbs.db
+# IDE
+.vscode/
+.idea/
+# Docker
+docker-compose.override.yml
+# Temporary files
+tmp/
+*.tmp
+# Coverage
+coverage.out
