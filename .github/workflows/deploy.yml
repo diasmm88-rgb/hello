@@ -48,8 +48,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/go-gin-cicd:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/go-gin-cicd:${{ github.sha }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/hello-dias:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/hello-dias:${{ github.sha }}
 
       - name: Deploy on VPS via SSH
         uses: appleboy/ssh-action@v1.2.0
@@ -58,7 +58,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /opt/go-gin-cicd
+            cd /root/go_Dias
             docker compose pull
             docker compose up -d
             docker image prune -f
